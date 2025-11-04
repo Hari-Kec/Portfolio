@@ -1,0 +1,322 @@
+/*
+  style.css — Modern portfolio styles
+  Uses CSS variables, flexbox/grid, glassmorphism, gradients, and subtle animations.
+*/
+
+:root{
+  --bg:#05060a;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --accent1: #7b61ff;
+  --accent2: #2be7c9;
+  --muted: #9aa3b2;
+  --text: #e6eef7;
+  --max-width: 1200px;
+}
+
+/* Global */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #071226;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* smooth scrolling */
+html{scroll-behavior:smooth}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+/* NAV */
+.nav-wrap{position:sticky;top:0;z-index:60;background:linear-gradient(180deg, rgba(5,6,10,0.4), rgba(5,6,10,0.15));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.logo-glow{display:inline-flex;width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));align-items:center;justify-content:center;font-weight:800;color:#fff;font-family:'Playfair Display', serif;box-shadow:0 6px 30px rgba(123,97,255,0.12)}
+.brand-text{font-weight:600}
+
+#nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:18px}
+.nav-links{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+.nav-link{text-decoration:none;color:var(--muted);padding:8px 10px;border-radius:8px;display:inline-flex;gap:8px;align-items:center;font-weight:500}
+/* Experience list (presentable cards) */
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin:18px 0 0 0;
+  padding:0;
+}
+
+.timeline-item{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:20px 22px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+}
+
+/* hide any leftover marker/icon */
+.timeline-icon{display:none}
+
+.timeline-body{margin:0}
+.timeline-body h3{font-weight:700;color:var(--text);margin:0 0 8px}
+.timeline-meta{display:block;color:var(--muted);font-size:13px;margin-bottom:8px}
+.timeline-body ul{margin:8px 0 0 18px}
+.timeline-body li{margin-bottom:8px;color:var(--muted);font-size:15px}
+/* Headings */
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 0;
+  color: var(--text);
+}
+
+.hero-title .accent {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #041018;
+  box-shadow: 0 8px 30px rgba(123, 97, 255, 0.12);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease; /* smooth hover animation */
+}
+
+/* Hover effect */
+.btn.ghost:hover {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #041018; /* contrast text color */
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-social a {
+  color: var(--muted);
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+
+/* SECTION HEADER */
+.section{padding:80px 0;position:relative}
+/* small top accent bar — keeps headings visually separated */
+.section::before{content:"";position:absolute;left:28px;top:14px;width:64px;height:6px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:6px;opacity:0.95}
+.section-header{margin-bottom:24px;position:relative;z-index:3;margin-top:18px}
+.section-header h2{font-family:'Playfair Display', serif;font-size:26px;margin:0 0 8px}
+.section-sub{color:var(--muted);margin:0}
+
+/* ensure primary content blocks start below headers */
+.section > .container > .about-card,
+.section > .container > .projects-grid,
+.section > .container > .blogs-grid,
+.section > .container > .research-list,
+.section > .container > .contact-grid{margin-top:14px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 380px;gap:26px;align-items:start}
+.about-card,.skills-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+.about-list{list-style:none;padding:0;margin:12px 0 0}
+.about-list li{color:var(--muted);padding:6px 0}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tags span{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;color:var(--text);font-weight:600}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* center expertise/project card content when overlay is used alone */
+.projects-grid .project-card{min-height:160px}
+/* Scope expertise-only overlay centering so project overlays on thumbnails keep their position */
+#expertise .projects-grid .project-card{display:flex;align-items:center;justify-content:center}
+#expertise .projects-grid .project-overlay{position:relative;padding:25px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.projects-grid .project-overlay .small-muted{color:var(--muted);font-size:13px;margin-top:10px}
+.projects-grid .project-overlay h3{margin:0;text-align:center}
+.project-card{border-radius:12px;overflow:hidden;position:relative}
+.thumb-wrap{position:relative}
+.thumb-wrap img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+.project-card:hover .thumb-wrap img{transform:scale(1.06)}
+.project-overlay{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(180deg, transparent, rgba(2,6,23,0.6));color:#fff}
+.tag{display:inline-block;background:rgba(255,255,255,0.06);padding:6px 8px;border-radius:8px;font-size:12px;margin-bottom:8px}
+
+/* TIMELINE */
+/* TIMELINE */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 60px; /* space for the vertical line */
+}
+
+/* Vertical Line - runs exactly through the center of the dots */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 37px; /* aligns with dot center */
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent1), var(--accent2));
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* Each timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* draw per-item dot that sits on the vertical line (ensures line passes through dots) */
+.timeline-item::before{
+  content: '';
+  position: absolute;
+  left: 37px; /* same center as .timeline::before */
+  top: 10px; /* vertical offset -- adjusts dot to align with title */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  box-shadow: 0 0 0 6px rgba(43,231,201,0.06);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* hide the previous company badge element (we use the timeline body for company/title) */
+.timeline-icon{display:none}
+
+/* Circular dot (perfectly centered on the vertical line) */
+.timeline-marker {
+  position: absolute;
+  left: 37px; /* same as the line center */
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent2);
+  border: 3px solid var(--accent1);
+  border-radius: 50%;
+  transform: translateX(-50%); /* centers horizontally */
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Body content */
+.timeline-body {
+  margin-left: 90px; /* pushes text away from the line */
+}
+
+.timeline-body h3 {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.timeline-meta {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.timeline-body ul {
+  margin-top: 6px;
+  padding-left: 18px;
+}
+
+.timeline-body li {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+
+/* BLOGS */
+.blogs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.blog-card{display:flex;gap:12px;background:var(--card);padding:12px;border-radius:12px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+.blog-thumb img{width:140px;height:100px;object-fit:cover;border-radius:8px}
+.blog-body h3{margin:0 0 6px}
+.blog-title a{color:var(--text);font-family:'Playfair Display', serif;font-weight:700;text-decoration:none}
+.blog-title a:hover{text-decoration:underline}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:420px 1fr;gap:24px}
+.contact-card{background:var(--glass);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.contact-icons{display:flex;gap:14px;align-items:center;font-size:20px;justify-content:center}
+.contact-icons a{display:inline-flex;width:56px;height:56px;border-radius:12px;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;text-decoration:none;border:1px solid rgba(255,255,255,0.04)}
+.contact-icons a:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.45)}
+
+/* Skills font styling */
+.skills-font{font-family:'Playfair Display', serif}
+.skills-font h3{font-size:20px;letter-spacing:0.6px}
+.skills-font p{font-size:15px;color:var(--muted);margin-bottom:10px}
+
+/* Education card with icon */
+.education-card{display:flex;gap:16px;align-items:center}
+.education-card .edu-left img{width:88px;height:95px;object-fit:cover;border-radius:18px}
+.education-card .edu-right .edu-title{font-family:'Playfair Display', serif;font-size:20px;margin-bottom:6px}
+
+/* Research list styling (no bullets) */
+.research-list{color:var(--text);font-size:15px}
+.contact-social a{display:inline-flex;gap:8px;align-items:center;color:var(--muted);padding:8px 0}
+.contact-form{display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+.contact-form label{display:flex;flex-direction:column;font-size:14px;color:var(--muted)}
+.contact-form input,.contact-form textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--text);outline:none}
+.form-actions{display:flex;gap:10px}
+
+/* Chatbot UI removed — cleaned up per user request */
+
+/* Footer */
+.site-footer{padding:22px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Reveal animations (IntersectionObserver toggles .active) */
+.reveal{opacity:0;transform:translateY(14px) scale(.995);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.active{opacity:1;transform:translateY(0) scale(1)}
+
+/* Responsive */
+@media (max-width:1024px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:260px 1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  #nav-toggle{display:block}
+  .nav-links{position:fixed;right:16px;top:68px;flex-direction:column;background:linear-gradient(180deg, rgba(6,8,12,0.98), rgba(6,8,12,0.96));padding:12px;border-radius:12px;display:none}
+  .nav-links.open{display:flex}
+  .hero{grid-template-columns:1fr;gap:18px;padding:32px 0}
+  .profile-photo{width:120px;height:120px}
+  .projects-grid{grid-template-columns:1fr}
+  .blogs-grid{grid-template-columns:1fr}
+}
+
+/* Strong hero centering rules (applied after responsive rules to ensure override) */
+.hero{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:60px 0}
+.hero-profile{width:100%;max-width:980px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.profile-photo{margin:0 auto}
+.hero-text{max-width:900px;margin:0 auto}
+.hero-sub{margin:14px auto 18px;max-width:820px}
+.hero-ctas{justify-content:center}
