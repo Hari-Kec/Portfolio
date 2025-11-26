@@ -30,6 +30,12 @@ body{
 /* smooth scrolling */
 html{scroll-behavior:smooth}
 
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
 .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
 
 /* NAV */
@@ -67,6 +73,13 @@ html{scroll-behavior:smooth}
 .timeline-meta{display:block;color:var(--muted);font-size:13px;margin-bottom:8px}
 .timeline-body ul{margin:8px 0 0 18px}
 .timeline-body li{margin-bottom:8px;color:var(--muted);font-size:15px}
+
+/* Hero */
+.hero-section{
+  position:relative;
+  padding:80px 0 90px;
+}
+
 /* Headings */
 .hero-title {
   font-family: 'Playfair Display', serif;
@@ -123,6 +136,12 @@ html{scroll-behavior:smooth}
   font-size: 18px;
 }
 
+.hero-ctas{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
 
 /* SECTION HEADER */
 .section{padding:80px 0;position:relative}
@@ -167,8 +186,8 @@ html{scroll-behavior:smooth}
 /* TIMELINE */
 .timeline {
   position: relative;
-  margin: 40px 0;
-  padding-left: 60px; /* space for the vertical line */
+  margin: 40px 0 40px 60px; /* space on the left for the line and dots */
+  padding-left: 0;
 }
 
 /* Vertical Line - runs exactly through the center of the dots */
@@ -182,6 +201,7 @@ html{scroll-behavior:smooth}
   background: linear-gradient(180deg, var(--accent1), var(--accent2));
   border-radius: 2px;
   z-index: 1;
+  transform: translateX(-50%); /* center line under dots */
 }
 
 /* Each timeline item */
@@ -225,7 +245,7 @@ html{scroll-behavior:smooth}
 
 /* Body content */
 .timeline-body {
-  margin-left: 90px; /* pushes text away from the line */
+  margin-left: 70px; /* distance from the vertical line */
 }
 
 .timeline-body h3 {
@@ -239,6 +259,22 @@ html{scroll-behavior:smooth}
   color: var(--muted);
   font-size: 13px;
   margin-left: 8px;
+}
+
+.timeline-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.company-logo{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  object-fit:contain;
+  background:#020617;
+  box-shadow:0 0 0 4px rgba(43,231,201,0.12);
 }
 
 .timeline-body ul {
@@ -320,3 +356,47 @@ html{scroll-behavior:smooth}
 .hero-text{max-width:900px;margin:0 auto}
 .hero-sub{margin:14px auto 18px;max-width:820px}
 .hero-ctas{justify-content:center}
+
+/* Larger screens: place image and text side-by-side */
+@media (min-width:900px){
+  .hero{
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    text-align:left!important;
+    padding:80px 0;
+  }
+  .hero-profile{
+    flex-direction:row;
+    align-items:center;
+    gap:32px;
+  }
+  .profile-photo{
+    width:180px;
+    height:180px;
+  }
+  .hero-text{
+    margin:0;
+  }
+  .hero-ctas{
+    justify-content:flex-start;
+  }
+}
+
+/* Extra-small devices tweaks */
+@media (max-width:480px){
+  .section{padding:56px 0}
+  .hero-section{padding:64px 0 72px}
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px;padding:0 4px}
+  .section-header h2{font-size:22px}
+  .nav{padding:10px 0}
+  .nav-links{right:12px;left:12px}
+  .timeline{margin-left:32px}
+  .timeline::before{left:20px}
+  .timeline-item::before,
+  .timeline-marker{left:20px}
+  .timeline-body{margin-left:46px}
+  .education-card{flex-direction:column;align-items:flex-start}
+  .contact-grid{gap:16px}
+}
