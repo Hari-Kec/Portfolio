@@ -1,170 +1,147 @@
 ﻿AI Engineer Portfolio
+LogicGo Infotech  |  AI Engineer  |  August 2025 – Present (1 Year)
 Profile Summary
-AI Engineer with hands-on experience in designing, optimizing, and deploying production-grade AI systems for real-world consumer applications. Specialized in computer vision, generative AI, and scalable API architectures, with a strong focus on performance optimization, model orchestration, and cost-efficient GPU deployment.
-Over the past 9 months, contributed to multiple AI-driven products including beauty camera applications, image enhancement systems, generative media platforms, and intelligent chatbot solutions, delivering measurable improvements in latency, accuracy, and user engagement.
-________________
-
-
+AI Engineer with 1 year of hands-on experience designing, optimizing, and deploying production-grade AI systems for real-world consumer and business applications. Specialized in computer vision, generative AI, GPU infrastructure optimization, and scalable API architectures, with a strong focus on performance optimization, cost-efficient deployment, model orchestration, and API security engineering.
+Over the past year, contributed end-to-end to multiple AI-driven products including beauty camera applications, image and video enhancement systems, generative media platforms, open-source model deployments, and intelligent chatbot solutions, delivering measurable improvements in latency, accuracy, GPU infrastructure cost, and user engagement.
 Core Technical Expertise
-* Languages & Frameworks: Python, FastAPI
-* AI/ML Domains: Computer Vision, Generative AI, Image Processing
-* Models & Libraries: Stable Diffusion (SDXL), GFPGAN, Real-ESRGAN, SRVGG, BiRefNet, InsightFace (InSwapper), Qwen, Gemini
-* Deployment & Infra: Docker, GPU-based deployment (Hugging Face Spaces), RunPod
-* Monitoring: Prometheus, Grafana
-* Architecture: REST APIs, Asynchronous Processing, Model Pipelines, Fallback Systems
-________________
-
-
+Languages & Frameworks: Python, FastAPI
+AI/ML Domains: Computer Vision, Generative AI, Image & Video Processing
+Open-Source Models: Stable Diffusion (SDXL), WAN (Video Generation), Qwen (Image Generation), GFPGAN, Real-ESRGAN, SRVGG, BiRefNet, InsightFace (InSwapper)
+Third-Party AI APIs: GPT-Image-2, Gemini 2.5 Flash, Gemini 3.1 Flash, PixVerse (Fal AI), LTX Video
+Deployment & Infra: Docker, GPU-based deployment (Hugging Face Spaces), RunPod, A100 Large GPU configurations, auto-sleep/inactivity-based scaling
+API Engineering & Security: Rate Limiting, Authentication, API Protection, Caching, Structured Logging, Asynchronous Processing
+Monitoring: Prometheus, Grafana
+Architecture: REST APIs, Model Pipelines, Fallback Systems, Job-Based Async Workflows
 Product Engineering Experience
 1. FaceSwap API
-Description:
-Developed a high-performance face swapping API using InsightFace (Buffalo + InSwapper models) for real-time applications.
+Description: Developed a high-performance face swapping API using InsightFace (Buffalo + InSwapper models) for real-time applications.
 Key Contributions:
-* Designed and deployed scalable FastAPI-based inference endpoints
-* Containerized and deployed on GPU-backed Hugging Face Docker environments
-* Reduced response latency from 45 seconds → 17 seconds (~62% improvement)
-* Improved face swap accuracy from ~68.9% → ~77%
-* Optimized preprocessing and blending pipeline for better visual realism
-________________
-
-
+Designed and deployed scalable FastAPI-based inference endpoints
+Containerized and deployed on GPU-backed Hugging Face Docker environments
+Reduced response latency from 45 seconds → 17 seconds (~62% improvement)
+Improved face swap accuracy from ~68.9% → ~77%
+Optimized preprocessing and blending pipeline for better visual realism
 2. AI Image Enhancer API
-Description:
-Built an advanced image enhancement pipeline integrating multiple super-resolution and face restoration models.
+Description: Built an advanced image enhancement pipeline integrating multiple super-resolution and face restoration models.
 Models Used:
-* GFPGAN (face restoration)
-* SRVGG
-* Real-ESRGAN
+GFPGAN (face restoration)
+SRVGG
+Real-ESRGAN
 Key Contributions:
-* Developed multi-stage enhancement pipeline
-* Increased output quality accuracy from ~75% → ~87%
-* Implemented model chaining and fine-tuning strategies
-* Optimized inference flow for better GPU utilization
-________________
-
-
+Developed multi-stage enhancement pipeline
+Increased output quality accuracy from ~75% → ~87%
+Implemented model chaining and fine-tuning strategies
+Optimized inference flow for better GPU utilization
 3. Object Remover API
-Description:
-Engineered an object removal system using Stable Diffusion XL Inpainting.
+Description: Engineered an object removal system using Stable Diffusion XL Inpainting.
 Key Contributions:
-* Replaced legacy system using Gemini image editing model
-* Implemented mask-based inpainting pipeline
-* Designed custom FastAPI endpoints for image + mask inputs
-* Improved user engagement/usage flow from ~30% → ~64%
-* Significantly enhanced output consistency and realism
-* Achieved an ~86% cost reduction, bringing expenses down from $220 to $30.
-________________
-
-
+Replaced legacy system using Gemini image editing model
+Implemented mask-based inpainting pipeline
+Designed custom FastAPI endpoints for image + mask inputs
+Improved user engagement/usage flow from ~30% → ~64%
+Significantly enhanced output consistency and realism
+Achieved an ~86% cost reduction, bringing expenses down from $220 to $30
 4. Background Remover API
-Description:
-Developed a high-precision background removal system using BiRefNet.
+Description: Developed a high-precision background removal system using BiRefNet.
 Key Contributions:
-* Built efficient inference API using FastAPI
-* Delivered improved edge detection and subject isolation
-* Optimized processing pipeline for faster turnaround
-________________
-
-
+Built efficient inference API using FastAPI
+Delivered improved edge detection and subject isolation
+Optimized processing pipeline for faster turnaround
 5. Image Generation Modules API
-Description:
-Designed a robust image generation system with multi-model fallback architecture.
+Description: Designed a robust image generation system with multi-model fallback architecture.
 Models Used:
-* Primary: Gemini 2.5 Flash Image
-* Fallback: Qwen Image Model
+Primary: Gemini 2.5 Flash Image
+Fallback: Qwen Image Model
 Key Contributions:
-* Implemented fallback inference system to ensure reliability
-* Optimized image dimensions dynamically for performance
-* Developed prompt engineering pipelines for:
-   * Style control
-   * Business-oriented outputs
-   * Multi-image merging
-* Balanced latency vs quality trade-offs
-________________
-
-
+Implemented fallback inference system to ensure reliability
+Optimized image dimensions dynamically for performance
+Developed prompt engineering pipelines for style control, business-oriented outputs, and multi-image merging
+Balanced latency vs quality trade-offs
 6. Video Generation & LipSync API
-Description:
-Built asynchronous video generation pipelines integrating multiple external AI services.
+Description: Built asynchronous video generation pipelines integrating multiple external AI services.
 Technologies Used:
-* PixVerse (via Fal AI)
-* LTX Video Model APIs
-* LipSync APIs
+PixVerse (via Fal AI)
+LTX Video Model APIs
+LipSync APIs
 Key Contributions:
-* Designed job-based asynchronous architecture
-* Implemented job ID tracking system
-* Managed long-running GPU tasks efficiently
-* Enabled scalable video and lip-sync generation workflows
-________________
-
-
-7. Pixcraft AI Platform
-Description:
-Contributed to a business-focused AI platform for image generation.
+Designed job-based asynchronous architecture
+Implemented job ID tracking system
+Managed long-running GPU tasks efficiently
+Enabled scalable video and lip-sync generation workflows
+7. Video Generation Pipeline (WAN Open-Source Model)
+Description: Built a self-hosted video generation pipeline using the open-source WAN model to replace a ready-made third-party API.
 Key Contributions:
-* Developed backend APIs for image generation workflows
-* Designed domain-specific prompt engineering for:
-   * Business professionals
-   * Formal attire generation
-   * Corporate branding visuals
-* Improved output relevance for commercial use cases
-________________
-
-
-8. Awaaz App – Content Moderation System
-Description:
-Developed an AI-based image moderation system for safety and compliance.
+Deployed on a high-configuration A100 Large GPU for production-grade throughput
+Configured deployment with minimal sleep/inactivity settings to balance responsiveness and idle GPU cost
+Migrated off the previously used ready-made video generation API to a self-hosted open-source stack
+Achieved a ~70% reduction in generation cost compared to the prior third-party API
+8. Image Generation Pipeline (Qwen Open-Source Model)
+Description: Built a self-hosted image generation pipeline using the open-source Qwen model on dedicated GPU infrastructure.
 Key Contributions:
-* Integrated NSFW classification models
-* Built API to calculate confidence scores
-* Implemented rejection pipeline for unsafe content
-* Ensured compliance with platform safety standards
+Deployed on a high-configuration A100 Large GPU environment
+Tuned inference and infrastructure setup to reduce per-image generation cost
+Optimized pipeline for stable throughput under production load
+9. Glymo – AI Photo & Video Generator
+Description: End-to-end AI generation platform covering photo and video creation, built with a fully asynchronous API architecture on high-end GPU infrastructure.
+Key Contributions:
+Built all generation APIs — image generation, video generation, first/last-frame generation, and asset/image-reference generation — using an asynchronous architecture
+Designed prompt engineering pipelines to drive reference-based and frame-conditioned generation
+Deployed and maintained the underlying video generation and image generation pipelines on high-end GPU infrastructure
+Owned the platform's generation stack end-to-end, from API design to GPU deployment
+10. Pixcraft AI Platform
+Description: Contributed to a business-focused AI platform for image generation.
+Key Contributions:
+Developed backend APIs for image generation workflows
+Designed domain-specific prompt engineering for business professionals, formal attire generation, and corporate branding visuals
+Improved output relevance for commercial use cases
+11. Awaaz App – Content Moderation System
+Description: Developed an AI-based image moderation system for safety and compliance.
+Key Contributions:
+Integrated NSFW classification models
+Built API to calculate confidence scores
+Implemented rejection pipeline for unsafe content
+Ensured compliance with platform safety standards
+API Engineering, Security & Cost Optimization
+Integrated GPT-Image-2 and Gemini API models (Gemini 2.5 Flash, Gemini 3.1 Flash) across generation workflows
+Achieved a 10% cost reduction on third-party model usage through targeted prompt engineering optimization
+Implemented rate limiting across production APIs to protect infrastructure from abuse and overload
+Set up authentication and API protection mechanisms to secure all exposed endpoints
+Implemented caching layers to reduce redundant inference calls and improve response times
+Built and maintained structured logging and quality-engineering practices around every FastAPI service
+Led expert-level deployment and maintenance of models on Hugging Face, exposing production-ready FastAPI services
 Deployment & Monitoring
-* Deployed all APIs using:
-   * Dockerized GPU environments on Hugging Face
-* Implemented real-time monitoring and alerting using:
-   * Prometheus
-   * Grafana
-* Ensured:
-   * High availability
-   * Performance tracking
-   * Failure detection and alerting
-________________
-
-
+Deployed all APIs using Dockerized GPU environments on Hugging Face, RunPod, and A100 Large GPU configurations
+Configured minimal sleep/inactivity-based scaling on GPU instances to reduce idle infrastructure cost without hurting responsiveness
+Implemented real-time monitoring and alerting using Prometheus and Grafana
+Ensured high availability, performance tracking, and failure detection/alerting across all production services
 Key Achievements
-* Reduced inference latency by up to 60%+
-* Improved model output quality by 10–20% across multiple systems
-* Increased product engagement metrics by 30%+
-* Designed and deployed end-to-end AI systems in production
-* Built scalable APIs handling real-world user traffic
-
-
-________________
-
-
+Reduced inference latency by up to 60%+ across core APIs
+Reduced GPU/infrastructure cost by up to 70% by migrating from ready-made APIs to self-hosted open-source models (WAN, Qwen)
+Reduced third-party model usage cost by 10% through prompt engineering optimization
+Achieved an ~86% cost reduction on the Object Remover pipeline ($220 → $30)
+Improved model output quality by 10–20% across multiple systems
+Increased product engagement metrics by 30%+
+Designed and deployed end-to-end AI systems in production, from model to secured, monitored APIs
+Built scalable APIs handling real-world user traffic with rate limiting, authentication, and caching in place
 Client Project Experience
 Viteezy – AI Health Quiz Chatbot
-Description:
-Developed an intelligent chatbot for personalized health recommendations.
+Description: Developed an intelligent chatbot for personalized health recommendations.
 Technologies Used:
-* Python
-* LLMs (OpenAI)
+Python
+LLMs (OpenAI)
 Key Contributions:
-* Built dynamic questionnaire flow
-* Integrated LLM-based reasoning system
-* Designed logic to recommend products from database based on user responses
-* Delivered a personalized and interactive user experience
-________________
-
-
+Built dynamic questionnaire flow
+Integrated LLM-based reasoning system
+Designed logic to recommend products from database based on user responses
+Delivered a personalized and interactive user experience
 Strengths
-* Strong understanding of AI product lifecycle
-* Expertise in model optimization and deployment
-* Ability to bridge research models → production systems
-* Focus on performance, cost efficiency, and scalability
-________________
-
-
+Strong understanding of the AI product lifecycle, from research model to production API
+Expertise in model optimization, GPU deployment, and infrastructure cost efficiency
+Ability to bridge research models → production systems
+Hands-on experience deploying and maintaining open-source models (WAN, Qwen, Stable Diffusion) on dedicated GPU infrastructure
+Strong focus on API security, quality engineering, and observability (rate limiting, auth, caching, logging, monitoring)
+Focus on performance, cost efficiency, and scalability
 Leadership
-* Trained a final-year intern on model fine tuning, deployments, monitoring, prompt engineering, and API designing.
+Trained a final-year intern on model fine-tuning, deployments, monitoring, prompt engineering, and API design
+
+

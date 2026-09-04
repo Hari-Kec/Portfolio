@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   navToggle &&
     navToggle.addEventListener("click", () => {
       navLinks.classList.toggle("open");
+      navToggle.setAttribute(
+        "aria-expanded",
+        navLinks.classList.contains("open") ? "true" : "false"
+      );
     });
 
   // Smooth active link highlighting using IntersectionObserver
@@ -73,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("open");
+      navToggle && navToggle.setAttribute("aria-expanded", "false");
     });
   });
 });
